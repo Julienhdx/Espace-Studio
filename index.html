@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Espace-Studio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+    
+<header>
+    <div class="logo-group">
+        <img src="image/Logo.blanc.png"  alt="Logo" class="logo">
+        <div class="header-container">
+            <h1>Espace<br>Studio</h1>
+        </div>
+    </div>
+    
+    <div class="burger" id="burger-icon" onclick="toggleMenu()">
+    &#9776; 
+</div>
+
+  <nav class="navbar">
+    <ul class="menu" id="main-menu">
+      <li><a href="index.html">Accueil</a></li> 
+      <li><a href="inscription.html">S'inscrire</a></li>
+      <li><a href="info.html">information</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+ <section class="hero">
+    <video autoplay muted loop playsinline id="hero-video" class="hero-video">
+                <source src="/image/studio.mov" type="video">
+        Votre navigateur ne supporte pas la vidéo de fond.
+    </video>
+    
+    <div class="hero-content">
+      <h2>Votre studio photo professionnel à Jette</h2>
+    </div>
+  </section>
+
+ <div class="hours">
+    <p>📅 Sur rendez-vous</p>
+  </div>
+
+  <section id="services">
+    <h2>Shooting</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Naissance</h3>
+        <p>parents + enfants</p>
+      </div>
+      <div class="card">
+        <h3>Groupes</h3>
+        <p>- 3 à 6 personnes</p>
+        <p>- 6 à 12 personnes
+        </p>
+      </div>
+      <div class="card">
+        <h3>et plus encore</h3>
+        <p>retrouvez le restes des catégoris dans <a href="tarifs.html">tarifs</a></p>
+      </div>
+    </div>
+  </section>
+
+ <section id="galerie">
+    <h2>Galerie</h2>
+    <p>une sélection de nos plus belles réalisations.</p>
+    
+    <div class="gallery-photos">
+        <img src="./image/Shooting1.png" alt="Photo de réalisation 1">
+        <img src="./image/shooting2.png" alt="Photo de réalisation 2">
+        <img src="./image/shooting3.png" alt="Photo de réalisation 3">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>📍 Rue Edouard Faes 61, 1090 Jette<br />
+    📞 02 426 93 11<br />
+    ✉️ info@espaceimage.be</p>
+  </section>
+
+ <footer>
+    <p>© 2025 Espace Image – Tous droits réservés.</p>
+    <a href="conditions.html"><p>Conditions Générales de vente et prestation</p></a>
+  </footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active'); 
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+Domaine : N'oubliez pas de remplacer VOTRE_DOMAINE par le nom de domaine de votre site 
+(ex: espacestudio.be) dans le script PHP pour les en-têtes d'e-mail.
+
+
+à changer ; 
+1. horaire

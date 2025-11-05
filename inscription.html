@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Carte d'identité bébé</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <img src="image/Logo.blanc.png" alt="Logo" class="logo">
+        <div class="header-container">
+            <h1>Espace<br>Studio</h1>
+        </div>
+
+
+        <nav class="navbar">
+            <ul class="menu" id="main-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="inscription.html">S'inscrire</a></li>
+                <li><a href="info.html">information</a></li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="identity-card-section">
+        <div class="container">
+
+            <div class="steps">
+                <h2>🧾 Comment ça fonctionne ?</h2>
+                <ol>
+                    <li>Cliquez sur le lien ci dessous.</li>
+                    <li>Repondez au questionnaire.</li>
+                    <li class="highlight">⚠️ Vous recevrez un e-mail de confirmation. Si non, contacter nous.<br></li>
+                    <li>Venez à la date prévus</li>
+                    <li>Le paiement se fait sur place. <strong>Prix : /////</strong>.</li>
+                </ol>
+                <div id="status-message" style="margin-top: 15px;"></div>
+            </div>
+
+            <div class="advice">
+                <h2>💡lien du formulaire :</h2>
+                <a href="formulaire.html" class="btn-inverse">Réserver un shooting</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Espace Image – Tous droits réservés.</p>
+        <a href="conditions.html"><p>Conditions Générales de vente et prestation</p></a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const status = urlParams.get('status');
+            const messageDiv = document.getElementById('status-message');
+
+            if (status) {
+                if (status === 'success') {
+                    messageDiv.innerHTML = '<p style="color: green; font-weight: bold; padding: 10px; border: 1px solid green; background-color: #e6ffe6; border-radius: 5px;">✅ Votre questionnaire a été envoyé avec succès ! Nous vous contacterons très bientôt.</p>';
+                } else if (status === 'error') {
+                    // Assurez-vous que l'adresse email est correcte ici aussi pour le contact
+                    messageDiv.innerHTML = '<p style="color: red; font-weight: bold; padding: 10px; border: 1px solid red; background-color: #ffe6e6; border-radius: 5px;">❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par email (jujufaitlapomme123@mail.com).</p>';
+                }
+                // Supprimer le paramètre de l'URL pour ne pas réafficher le message après rafraîchissement
+                // Ceci maintient une URL propre pour l'utilisateur
+                history.replaceState({}, document.title, window.location.pathname);
+            }
+        });
+    </script>
+
+</body>
+</html>

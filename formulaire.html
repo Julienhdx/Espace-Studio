@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Questionnaire Shooting Photo</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <header>
+        <img src="image/Logo.blanc.png" alt="Logo" class="logo">
+        <div class="header-container">
+            <h1>Espace<br>Studio</h1>
+        </div>
+        <nav class="navbar">
+            <ul class="menu" id="main-menu">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="inscription.html">S'inscrire</a></li>
+                <li><a href="info.html">information</a></li>
+                <li><a href="tarifs.html">Tarifs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="tarifs-section">
+        <h2>Quel type de shooting souhaitez-vous réserver ?</h2>
+        <div class="form-container">
+            
+            <div class="form-group">
+                <label for="client-type">Je suis :</label>
+                <select id="client-type" onchange="showForm(this.value)">
+                    <option value="">-- Veuillez choisir --</option>
+                    <option value="particulier">Un Particulier (Portraits, Famille, etc.)</option>
+                    <option value="entreprise">Une Entreprise (Corporate, Produits, etc.)</option>
+                </select>
+            </div>
+
+            <form id="form-particulier" style="display:none;" action="send_form.php" method="post">
+                <h3>Questionnaire Particuliers</h3>
+                <input type="hidden" name="form_type" value="particulier">
+
+                <div class="form-group">
+                    <label for="p-nom">1. Nom - Prénom - Téléphone:</label>
+                    <input type="text" id="p-nom" name="Nom_Prenom_Telephone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="p-date">2. Date et heure:</label>
+                    <input type="datetime-local" id="p-date" name="Date_Heure">
+                </div>
+                
+                <div class="form-group">
+                    <label for="p-experience">3. Avez-vous déjà eu une expérience de shooting? Qu'avez-vous apprécié (positif/négatif) ?</label>
+                    <textarea id="p-experience" name="Experience_Shooting"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="p-participants">4. Nombre de participants (adultes/enfants) :</label>
+                    <input type="text" id="p-participants" name="Nombre_Participants">
+                </div>
+
+                <div class="form-group">
+                    <label for="p-style">5. Style ou ambiance recherchée :</label>
+                    <textarea id="p-style" name="Style_Ambiance"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="p-utilisation">6. Utilisation prévue des photos :</label>
+                    <input type="text" id="p-utilisation" name="Utilisation_Photos">
+                </div>
+
+                <div class="form-group">
+                    <label for="p-tenues">7. Combien de tenues prévues ?</label>
+                    <input type="text" id="p-tenues" name="Nombre_Tenues">
+                </div>
+                
+                <div class="form-group">
+                    <label for="p-maquillage">8. Souhaitez-vous un maquillage spécifique ?</label>
+                    <input type="text" id="p-maquillage" name="Maquillage_Specifique" placeholder="Oui/Non ou spécifiez vos besoins">
+                </div>
+                
+                <div class="form-group">
+                    <label for="p-tirages">9. Quel type de tirages désirez-vous? (Nous fournissons d'office les fichiers numériques.)</label>
+                    <input type="text" id="p-tirages" name="Type_Tirages" placeholder="Ex: Papier mat 10x15, Tirage sur toile, etc.">
+                </div>
+
+                <div class="form-group">
+                    <label>10. Autorisation d'utilisation des images par le studio :</label>
+                    <div class="radio-group">
+                        <input type="radio" id="p-autorisation-oui" name="Autorisation_Studio" value="Oui" required> <label for="p-autorisation-oui">Oui</label>
+                        <input type="radio" id="p-autorisation-non" name="Autorisation_Studio" value="Non"> <label for="p-autorisation-non">Non</label>
+                    </div>
+                </div>
+
+                <div class="form-submit">
+                    <button type="submit">Envoyer mon Questionnaire Particulier</button>
+                </div>
+            </form>
+
+            <form id="form-entreprise" style="display:none;" action="send_form.php" method="post">
+                <h3>Questionnaire Entreprises</h3>
+                <input type="hidden" name="form_type" value="entreprise">
+
+                <div class="form-group">
+                    <label for="e-nom-entreprise">1. Nom de l'entreprise :</label>
+                    <input type="text" id="e-nom-entreprise" name="Nom_Entreprise" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="e-nom-contact">2. Nom du contact (et email/téléphone) :</label>
+                    <input type="text" id="e-nom-contact" name="Nom_Contact" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="e-type-projet">3. Type de projet photo :</label>
+                    <input type="text" id="e-type-projet" name="Type_Projet" placeholder="Ex: Portraits Corporate, Photos de produits, Reportage événementiel">
+                </div>
+                
+                <div class="form-group">
+                    <label for="e-date-lieu">4. Date et lieu du shooting :</label>
+                    <input type="text" id="e-date-lieu" name="Date_Lieu">
+                </div>
+
+                <div class="form-group">
+                    <label for="e-participants">5. Nombre de participants :</label>
+                    <input type="text" id="e-participants" name="Nombre_Participants">
+                </div>
+
+                <div class="form-group">
+                    <label for="e-objectifs">6. Objectifs et message visuel :</label>
+                    <textarea id="e-objectifs" name="Objectifs_Message"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="e-style">7. Style ou référence visuelle :</label>
+                    <textarea id="e-style" name="Style_Reference" placeholder="Lien vers un moodboard, des exemples de photos, etc."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="e-utilisation">8. Utilisation prévue des images :</label>
+                    <input type="text" id="e-utilisation" name="Utilisation_Images" placeholder="Ex: Site web, Réseaux sociaux, Presse, Interne">
+                </div>
+
+                <div class="form-group">
+                    <label for="e-format">9. Format de livraison souhaité :</label>
+                    <input type="text" id="e-format" name="Format_Livraison" placeholder="Ex: JPEG HD, PNG pour web, Fichiers RAW">
+                </div>
+                
+                <div class="form-group">
+                    <label for="e-budget">10. Budget estimé :</label>
+                    <input type="text" id="e-budget" name="Budget_Estime" placeholder="Ex: 500€ - 1000€">
+                </div>
+                
+                <div class="form-group">
+                    <label>11. Autorisation d'utilisation des images par le studio :</label>
+                    <div class="radio-group">
+                        <input type="radio" id="e-autorisation-oui" name="Autorisation_Studio" value="Oui" required> <label for="e-autorisation-oui">Oui</label>
+                        <input type="radio" id="e-autorisation-non" name="Autorisation_Studio" value="Non"> <label for="e-autorisation-non">Non</label>
+                    </div>
+                </div>
+
+
+                <div class="form-submit">
+                    <button type="submit">Envoyer mon Questionnaire Entreprise</button>
+                </div>
+            </form>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Espace Image – Tous droits réservés.</p>
+        <a href="conditions.html"><p>Conditions Générales de vente et prestation</p></a>
+    </footer>
+
+    <script>
+        function showForm(type) {
+            document.getElementById('form-particulier').style.display = 'none';
+            document.getElementById('form-entreprise').style.display = 'none';
+
+            if (type === 'particulier') {
+                document.getElementById('form-particulier').style.display = 'block';
+            } else if (type === 'entreprise') {
+                document.getElementById('form-entreprise').style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
