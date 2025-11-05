@@ -4,10 +4,10 @@ section.hero {
     position: relative; 
     overflow: hidden;
     
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-bottom-left-radius: 30px;
-    border-bottom-right-radius: 30px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     
     height: 80vh;
     width: 100%;
@@ -150,4 +150,5 @@ section.hero {
     .hero h2 { font-size: 2rem; }
     .grid { grid-template-columns: 1fr; gap: 1.5rem; } 
     .card { padding: 1.5rem; }
+
 }
