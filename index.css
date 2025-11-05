@@ -1,5 +1,3 @@
-/* --- SECTION HERO (VIDÉO & CENTRAGE) --- */
-
 section.hero {
     position: relative; 
     overflow: hidden;
@@ -17,7 +15,6 @@ section.hero {
     z-index: 2;
 }
 
-/* Filtre sombre */
 .hero::after {
     content: '';
     position: absolute;
@@ -56,7 +53,6 @@ section.hero {
     color: white; 
 }
 
-/* --- SECTION HOURS --- */
 .hours {
     background: #f1f1f1;
     padding: 2rem;
@@ -67,8 +63,6 @@ section.hero {
 }
 
 
-/* --- SERVICES (CARTES) --- */
-
 #services h2,
 #galerie h2,
 #contact h2 {
@@ -77,13 +71,11 @@ section.hero {
     margin-bottom: 2rem; 
 }
 
-/* ⚠️ CORRECTION : Il manquait une virgule ici */
 #galerie p,
 #contact p {
     padding-left: 15px; 
 }
 
-/* NOUVEAU : Alignement des détails de contact */
 .contact-details {
     padding-left: 15px; 
 }
@@ -101,7 +93,6 @@ section.hero {
 }
 
 .grid {
-    /* ⚠️ CORRECTION : 'flexbox' n'existe pas, c'est 'grid' */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 2rem;
 }
@@ -113,7 +104,6 @@ section.hero {
     box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-/* --- GALERIE --- */
 
 .gallery-photos {
     display: flex; 
@@ -125,8 +115,6 @@ section.hero {
 
 .gallery-photos img {
     flex: 1 1 calc(33.333% - 20px); 
-    
-    /* ⚠️ CORRECTION : 100% force l'image à remplir la colonne flex */
     width: 20%; 
     height: auto;
     border-radius: 8px;
@@ -134,10 +122,9 @@ section.hero {
 }
 
 
-/* --- RESPONSIVE INDEX.HTML --- */
+
 
 @media (max-width: 768px) {
-    /* On s'assure que le padding: 0 est aussi forcé sur mobile */
     section.hero { 
         height: auto; 
         padding: 3rem 1rem !important; 
@@ -145,9 +132,4 @@ section.hero {
     .hero h2 { font-size: 2rem; }
     .grid { grid-template-columns: 1fr; gap: 1.5rem; } 
     .card { padding: 1.5rem; }
-
 }
-
-
-
-

@@ -3,7 +3,7 @@
 error_reporting(0); 
 
 
-$to_email = "jujufaitlapomme123@mail.com"; 
+$to_email = "info@espacestudio.be"; 
 
 $redirect_page = "inscription.html"; 
 
@@ -16,8 +16,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['form_type'])) {
 
 
     // ⚠️ IMPORTANT : REMPLACEZ VOTRE_DOMAINE PAR VOTRE NOM DE DOMAINE RÉEL
-    $headers = "From: webmaster@VOTRE_DOMAINE\r\n"; 
-    $headers .= "Reply-To: noreply@VOTRE_DOMAINE\r\n"; 
+    $headers = "From: webmaster@espacestudio.be\r\n"; 
+    $headers .= "Reply-To: noreply@espacestudio.be\r\n"; 
     $headers .= "X-Mailer: PHP/" . phpversion();
 
 

@@ -9,7 +9,6 @@
     color: #000;
     margin-bottom: 2rem;
     font-size: 2rem;
-    /* Annulation de la barre pour le titre centré */
     border-left: none; 
     padding-left: 0; 
 }
@@ -33,7 +32,6 @@
 .tarifs-table tr:hover { background-color: #f7f7f7; }
 .tarifs-table th:last-child { color: #fff !important; }
 
-/* Styles de colonnes pour la page tarifs (ajustements visuels) */
 .tarifs-table th:nth-child(1), .tarifs-table td:nth-child(1) { width: 12%; }
 .tarifs-table th:nth-child(2), .tarifs-table td:nth-child(2) { width: 16%; }
 .tarifs-table th:nth-child(3), .tarifs-table td:nth-child(3) { width: 8%; }
@@ -43,7 +41,6 @@
 .tarifs-table th:nth-child(7), .tarifs-table td:nth-child(7) { width: 18%; }
 .tarifs-table th:nth-child(8), .tarifs-table td:nth-child(8) { width: 10%; font-weight: 600; color: #000; }
 
-/* Responsive Tarifs */
 @media (max-width: 900px) {
     .tarifs-section { padding: 2rem 1rem; max-width: 100%; }
     .tarifs-table th, .tarifs-table td { font-size: 0.85rem; padding: 0.8rem; }

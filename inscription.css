@@ -36,7 +36,7 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
     transition: all 0.3s ease;
-    border: 1px solid #ddd; /* Ajouté pour le look inverse */
+    border: 1px solid #ddd; 
 }
 
 .btn-inverse:hover {

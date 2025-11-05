@@ -12,7 +12,7 @@
 
 <header>
     <div class="logo-group">
-        <img src="Logo.blanc.png"  alt="Logo" class="logo">
+        <a href="index.html"><img src="Logo.blanc.png" alt="Logo" class="logo"></a>
         <div class="header-container">
             <h1>Espace<br>Studio</h1>
         </div>
@@ -23,7 +23,7 @@
     <label for="menu-toggle" class="burger" id="burger-icon">
         &#9776; 
     </label>
-
+<a href=""></a>
   <nav class="navbar">
         <ul class="menu" id="main-menu">
       <li><a href="index.html">Accueil</a></li> 
@@ -44,7 +44,6 @@
                     <li>Repondez au questionnaire.</li>
                     <li class="highlight">⚠️ Vous recevrez un e-mail de confirmation. Si non, contacter nous.<br></li>
                     <li>Venez à la date prévus</li>
-                    <li>Le paiement se fait sur place. <strong>Prix : /////</strong>.</li>
                 </ol>
                 <div id="status-message" style="margin-top: 15px;"></div>
             </div>
@@ -71,11 +70,8 @@
                 if (status === 'success') {
                     messageDiv.innerHTML = '<p style="color: green; font-weight: bold; padding: 10px; border: 1px solid green; background-color: #e6ffe6; border-radius: 5px;">✅ Votre questionnaire a été envoyé avec succès ! Nous vous contacterons très bientôt.</p>';
                 } else if (status === 'error') {
-                    // Assurez-vous que l'adresse email est correcte ici aussi pour le contact
-                    messageDiv.innerHTML = '<p style="color: red; font-weight: bold; padding: 10px; border: 1px solid red; background-color: #ffe6e6; border-radius: 5px;">❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par email (jujufaitlapomme123@mail.com).</p>';
+                    messageDiv.innerHTML = '<p style="color: red; font-weight: bold; padding: 10px; border: 1px solid red; background-color: #ffe6e6; border-radius: 5px;">❌ Une erreur est survenue lors de l\'envoi. Veuillez réessayer ou nous contacter directement par email (info@espacestudio.be).</p>';
                 }
-                // Supprimer le paramètre de l'URL pour ne pas réafficher le message après rafraîchissement
-                // Ceci maintient une URL propre pour l'utilisateur
                 history.replaceState({}, document.title, window.location.pathname);
             }
         });
