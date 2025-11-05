@@ -7,32 +7,34 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="general.css">
+    <link rel="stylesheet" href="index.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icon.png" type="image/png"> 
 
 </head>
 <body>
     
 <header>
     <div class="logo-group">
-        <img src="Logo.blanc.png"  alt="Logo" class="logo">
+        <img src="Logo.blanc.png"  alt="Logo" class="logo">
         <div class="header-container">
             <h1>Espace<br>Studio</h1>
         </div>
     </div>
     
-    <div class="burger" id="burger-icon" onclick="toggleMenu()">
-    &#9776; 
-</div>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <label for="menu-toggle" class="burger" id="burger-icon">
+        &#9776; 
+    </label>
 
   <nav class="navbar">
-    <ul class="menu" id="main-menu">
+        <ul class="menu" id="main-menu">
       <li><a href="index.html">Accueil</a></li> 
       <li><a href="inscription.html">S'inscrire</a></li>
-      <li><a href="info.html">information</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="https://www.espaceimage.be/">Espace Image</a></li>
     </ul>
   </nav>
 </header>
@@ -40,7 +42,7 @@
 
  <section class="hero">
     <video autoplay muted loop playsinline id="hero-video" class="hero-video">
-                <source src="./image/studio.mov" type="video">
+                <source src="studio.mp4" type="video/mp4">
         Votre navigateur ne supporte pas la vidéo de fond.
     </video>
     
@@ -107,12 +109,6 @@
     <a href="conditions.html"><p>Conditions Générales de vente et prestation</p></a>
   </footer>
 
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById('main-menu');
-        menu.classList.toggle('active'); 
-    }
-</script>
-</body>
 
+</body>
 </html>

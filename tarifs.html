@@ -6,28 +6,30 @@
   <title>Nos Tarifs – Espace Studio</title>
   <link rel="stylesheet" href="tarifs.css">
   <link rel="stylesheet" href="general.css">
+  <link rel="icon" href="icon.png" type="image/png"> 
 </head>
 <body>
 
 <header>
     <div class="logo-group">
-        <img src="image/Logo.blanc.png"  alt="Logo" class="logo">
+        <img src="Logo.blanc.png"  alt="Logo" class="logo">
         <div class="header-container">
             <h1>Espace<br>Studio</h1>
         </div>
     </div>
     
-    <div class="burger" id="burger-icon" onclick="toggleMenu()">
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    
+    <label for="menu-toggle" class="burger" id="burger-icon">
         &#9776; 
-    </div>
+    </label>
 
   <nav class="navbar">
-    <ul class="menu" id="main-menu">
+        <ul class="menu" id="main-menu">
       <li><a href="index.html">Accueil</a></li> 
       <li><a href="inscription.html">S'inscrire</a></li>
-      <li><a href="info.html">information</a></li>
       <li><a href="tarifs.html">Tarifs</a></li>
-      <li><a href="#">Contact</a></li>
+      <li><a href="https://www.espaceimage.be/">Espace Image</a></li>
     </ul>
   </nav>
 </header>
@@ -151,12 +153,7 @@
     <a href="conditions.html"><p>Conditions Générales de vente et prestation</p></a>
   </footer>
 
-<script>
-    function toggleMenu() {
-        const menu = document.getElementById('main-menu');
-        menu.classList.toggle('active'); 
-    }
-</script>
+
 
 </body>
 </html>

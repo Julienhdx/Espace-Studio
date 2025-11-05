@@ -1,21 +1,23 @@
 /* --- SECTION HERO (VIDÉO & CENTRAGE) --- */
 
-.hero {
+section.hero {
     position: relative; 
     overflow: hidden;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
+    
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
     
     height: 80vh;
     width: 100%;
-    
+    margin-top:  -1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 0; 
+    padding: 0 !important;
+    z-index: 2;
 }
 
 /* Filtre sombre */
@@ -26,8 +28,10 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.699); 
+    background: rgba(32, 32, 32, 0.678); 
     z-index: 1; 
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .hero-video {
@@ -62,14 +66,13 @@
     background: #f1f1f1;
     padding: 2rem;
     text-align: center;
-    margin-top: -2rem;
-    font-size: 1.1rem;
+    margin-top: -1.5rem;
+    font-size: 1rem;
     color: #555;
 }
 
 
 /* --- SERVICES (CARTES) --- */
-
 
 #services h2,
 #galerie h2,
@@ -79,13 +82,31 @@
     margin-bottom: 2rem; 
 }
 
-#galerie p
+/* ⚠️ CORRECTION : Il manquait une virgule ici */
+#galerie p,
 #contact p {
     padding-left: 15px; 
 }
 
+/* NOUVEAU : Alignement des détails de contact */
+.contact-details {
+    padding-left: 15px; 
+}
+
+.contact-line {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-line span:first-child {
+    display: inline-block;
+    width: 25px;
+    text-align: left;
+}
+
 .grid {
-    display: flexbox;
+    /* ⚠️ CORRECTION : 'flexbox' n'existe pas, c'est 'grid' */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
     gap: 2rem;
 }
@@ -109,7 +130,9 @@
 
 .gallery-photos img {
     flex: 1 1 calc(33.333% - 20px); 
-    width: 10%; 
+    
+    /* ⚠️ CORRECTION : 100% force l'image à remplir la colonne flex */
+    width: 20%; 
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -119,7 +142,11 @@
 /* --- RESPONSIVE INDEX.HTML --- */
 
 @media (max-width: 768px) {
-    .hero { height: auto; padding: 3rem 1rem; }
+    /* On s'assure que le padding: 0 est aussi forcé sur mobile */
+    section.hero { 
+        height: auto; 
+        padding: 3rem 1rem !important; 
+    }
     .hero h2 { font-size: 2rem; }
     .grid { grid-template-columns: 1fr; gap: 1.5rem; } 
     .card { padding: 1.5rem; }

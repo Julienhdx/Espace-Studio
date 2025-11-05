@@ -28,7 +28,7 @@ h1, h2 {
 header {
     background: #1b1919f3;
     color: white;
-    padding: 1rem 2rem;
+    padding: 0.2rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,11 +40,24 @@ header {
     align-items: center;
 }
 
+/* --- SECTIONS GÉNÉRALES --- */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: auto;
+    position: relative;
+}
+
 header h1 {
     font-size: 1.5rem;
-    padding-right: 0; 
-    margin-right: 0; 
+    padding-right: 100px;
+    margin-right: 28rem; 
     color: white;
+}
+
+/* Cache la case à cocher elle-même */
+.menu-toggle {
+    display: none;
 }
 
 .burger {
@@ -66,15 +79,16 @@ header h1 {
 
 nav a {
     color: white;
-    margin-left: 1rem;
+    margin-left: 0.5rem;
     text-decoration: none;
     font-weight: 600;
-    padding: 10px; 
+    padding: 8px; 
     display: block; 
 }
 
 .menu a:hover {
-    background-color: #333;
+    background-color: #494949ad;
+    border-radius: 10px;
 }
 
 
@@ -86,41 +100,58 @@ footer {
     padding: 2rem;
 }
 
-/* --- REGLES GÉNÉRALES RESPONSIVES (APPLIQUÉES PAR DÉFAUT SI NON ÉCRASÉES) --- */
+/* --- REGLES GÉNÉRALES RESPONSIVES --- */
 
 @media (max-width: 768px) {
-    /* --- HEADER / NAVIGATION MOBILE --- */
-    
-    .burger { display: block; }
-    
+    .burger {
+        display: block;
+        position: absolute; /* ⬅️ On le sort du flux normal */
+        
+        /* Positionne-le en haut à droite de l'écran */
+        top: 55px;  /* ⬅️ Joue avec cette valeur (ex: 80px) pour le descendre */
+        right: 3.5rem; /* 1.5rem (24px) du bord droit */
+        
+        z-index: 1001; /* S'assure qu'il est cliquable */
+        
+        /* ❗️ Change la couleur pour qu'il soit visible sur le fond clair ! */
+        color: #a8a6a6; 
+    }
+
     header {
         flex-direction: row; 
         text-align: left;
-        padding: 1rem;
+        /* On remet le padding d'origine, le burger n'est plus dedans */
+        padding: 1rem; 
         justify-content: space-between; 
     }
 
-    header h1 {
+   header h1 {
         display: block; 
-        margin: 0 0 0 10px; 
-        padding: 0;
+        margin:  -20px; /* ⬅️ Augmenté à 15px (tu peux mettre 20px si tu veux plus) */
+        padding: 1;
         font-size: 1.2rem;
     }
     
     .logo-group { margin-right: 0; }
     
-    .navbar { display: none; } /* Masque le NAV du flux principal */
+    /* ⚠️ CORRECTION : La règle .navbar { display: none; } a été SUPPRIMÉE */
     
     /* Menu Coulissant (Panel) */
     .menu {
-        position: fixed; top: 0; right: -300px; 
-        width: 300px; height: 100%; background: #1b1919;
+        position: fixed; top: 0; 
+        right: -200px;  /* ⬅️ Changé pour -250px */
+        width: 200px;   /* ⬅️ Changé pour 250px */
+        height: 100%; background: #1b1919;
         flex-direction: column; justify-content: flex-start; align-items: flex-start;
         padding-top: 60px; transition: right 0.3s ease-in-out; z-index: 1000;
         box-shadow: -2px 0 5px rgba(0,0,0,0.5); display: flex; 
     }
     
-    .menu.active { right: 0; }
+    /* ⚠️ CORRECTION : Utilise :checked au lieu de .active */
+    .menu-toggle:checked ~ .navbar .menu {
+        right: 0; /* Révélé quand la case est cochée */
+    }
+
     .menu a { padding: 1rem; border-top: 1px solid #333; }
     
     /* Autres règles générales */
