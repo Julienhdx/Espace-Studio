@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="general.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -39,7 +40,7 @@
 
  <section class="hero">
     <video autoplay muted loop playsinline id="hero-video" class="hero-video">
-                <source src="/image/studio.mov" type="video">
+                <source src="./image/studio.mov" type="video">
         Votre navigateur ne supporte pas la vidéo de fond.
     </video>
     
@@ -83,11 +84,22 @@
     </div>
   </section>
 
-  <section id="contact">
+<section id="contact">
     <h2>Contact</h2>
-    <p>📍 Rue Edouard Faes 61, 1090 Jette<br />
-    📞 02 426 93 11<br />
-    ✉️ info@espaceimage.be</p>
+    <div class="contact-details">
+        <div class="contact-line">
+            <span>📍</span>
+            <span>Rue Edouard Faes 61, 1090 Jette</span>
+        </div>
+        <div class="contact-line">
+            <span>📞</span>
+            <span>02 426 93 11</span>
+        </div>
+        <div class="contact-line">
+            <span>✉️</span>
+            <span>info@espaceimage.be</span>
+        </div>
+    </div>
   </section>
 
  <footer>

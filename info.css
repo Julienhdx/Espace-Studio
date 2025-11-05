@@ -1,0 +1,46 @@
+.identity-card-section {
+    padding: 40px 20px;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.steps ol {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.steps li {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    color: red;
+    font-weight: bold;
+}
+
+.advice {
+    margin-top: 40px;
+}
+
+.btn-inverse {
+    display: inline-block;
+    padding: 1rem 1.6rem;
+    background: #fff;
+    color: #000;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: 1px solid #ddd; /* Ajouté pour le look inverse */
+}
+
+.btn-inverse:hover {
+    background: #000;
+    color: #fff;
+    border: 1.5px solid #000000;
+}

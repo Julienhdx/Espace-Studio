@@ -4,25 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Questionnaire Shooting Photo</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="formulaire.css">
+    <link rel="stylesheet" href="general.css">
 </head>
 <body>
 
-    <header>
-        <img src="image/Logo.blanc.png" alt="Logo" class="logo">
+<header>
+    <div class="logo-group">
+        <img src="image/Logo.blanc.png"  alt="Logo" class="logo">
         <div class="header-container">
-            <h1>Espace<br>Studio</h1>
-        </div>
-        <nav class="navbar">
-            <ul class="menu" id="main-menu">
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="inscription.html">S'inscrire</a></li>
-                <li><a href="info.html">information</a></li>
-                <li><a href="tarifs.html">Tarifs</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+            <h1>Espace<br>Studio</h1>
+        </div>
+    </div>
+    
+    <div class="burger" id="burger-icon" onclick="toggleMenu()">
+        &#9776; 
+    </div>
+
+  <nav class="navbar">
+    <ul class="menu" id="main-menu">
+      <li><a href="index.html">Accueil</a></li> 
+      <li><a href="inscription.html">S'inscrire</a></li>
+      <li><a href="info.html">information</a></li>
+      <li><a href="tarifs.html">Tarifs</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
     <section class="tarifs-section">
         <h2>Quel type de shooting souhaitez-vous réserver ?</h2>
@@ -186,6 +194,11 @@
                 document.getElementById('form-entreprise').style.display = 'block';
             }
         }
+
+    function toggleMenu() {
+        const menu = document.getElementById('main-menu');
+        menu.classList.toggle('active'); 
+    }
     </script>
 
 </body>

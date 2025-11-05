@@ -1,0 +1,129 @@
+/* --- Styles généraux et réinitialisation --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Règle générale des titres (barre gauche) */
+h1, h2 {
+    color: #000;
+    border-left: 5px solid #000;
+    padding-left: 10px;
+}
+
+/* --- HEADER / NAVIGATION --- */
+.logo {
+    width: 120px;
+    height: auto; 
+}
+
+header {
+    background: #1b1919f3;
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Alignement du Logo/Titre */
+.logo-group {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    padding-right: 0; 
+    margin-right: 0; 
+    color: white;
+}
+
+.burger {
+    font-size: 24px;
+    display: none; /* Masqué par défaut sur bureau */
+    cursor: pointer;
+    color: white;
+    z-index: 1001; 
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px; 
+    display: block; 
+}
+
+.menu a:hover {
+    background-color: #333;
+}
+
+
+/* --- FOOTER --- */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+/* --- REGLES GÉNÉRALES RESPONSIVES (APPLIQUÉES PAR DÉFAUT SI NON ÉCRASÉES) --- */
+
+@media (max-width: 768px) {
+    /* --- HEADER / NAVIGATION MOBILE --- */
+    
+    .burger { display: block; }
+    
+    header {
+        flex-direction: row; 
+        text-align: left;
+        padding: 1rem;
+        justify-content: space-between; 
+    }
+
+    header h1 {
+        display: block; 
+        margin: 0 0 0 10px; 
+        padding: 0;
+        font-size: 1.2rem;
+    }
+    
+    .logo-group { margin-right: 0; }
+    
+    .navbar { display: none; } /* Masque le NAV du flux principal */
+    
+    /* Menu Coulissant (Panel) */
+    .menu {
+        position: fixed; top: 0; right: -300px; 
+        width: 300px; height: 100%; background: #1b1919;
+        flex-direction: column; justify-content: flex-start; align-items: flex-start;
+        padding-top: 60px; transition: right 0.3s ease-in-out; z-index: 1000;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.5); display: flex; 
+    }
+    
+    .menu.active { right: 0; }
+    .menu a { padding: 1rem; border-top: 1px solid #333; }
+    
+    /* Autres règles générales */
+    section { padding: 2rem 1rem; }
+    footer { padding: 1.5rem 1rem; font-size: 0.9rem; }
+}
